@@ -5,5 +5,5 @@ A barebones barely working music player built using JavaFX.
 
 There **will be** some issues for Linux users as JavaFX doesn't support libavcodec version >= 58
 
-# Requirements
+## Requirements
 Requires a Java version >= 9 preferably the latest.
