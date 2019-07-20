@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.162"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PlayerController">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <Menu mnemonicParsing="true" text="File">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open..." />
+                    <MenuItem mnemonicParsing="false" text="Preferences..." />
+                    <MenuItem mnemonicParsing="false" text="Quit"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="true" text="Help">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                </items>
+            </Menu>
+        </MenuBar>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0"
+                    prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Button fx:id="buttonPlay" onAction="#playMusic"
+                        layoutX="182.0" layoutY="223.0" mnemonicParsing="false" text="Play" />
+                <Button fx:id="buttonPause" onAction="#pauseMusic"
+                        layoutX="259.0" layoutY="223.0" mnemonicParsing="false" text="Pause" />
+                <Button fx:id="buttonStop" onAction="#stopMusic"
+                        layoutX="350.0" layoutY="223.0" mnemonicParsing="false" text="Stop" />
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
