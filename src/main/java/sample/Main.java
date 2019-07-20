@@ -1,3 +1,8 @@
+/**
+ * A simple music player in JavaFX. Nothing too fancy.
+ * @author Sudhansu (learner)
+ * */
+
 package sample;
 
 import javafx.application.Application;
