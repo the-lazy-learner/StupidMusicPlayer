@@ -1,8 +1,3 @@
-/**
- * A simple music player in JavaFX. Nothing too fancy.
- * @author Sudhansu (learner)
- * */
-
 package sample;
 
 import javafx.application.Application;
@@ -10,6 +5,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+/**
+ * A simple music player in JavaFX. Nothing too fancy.
+ * @author Sudhansu (learner)
+ * */
+
 
 public class Main extends Application {
 

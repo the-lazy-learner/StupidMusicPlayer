@@ -7,4 +7,4 @@ module sample {
     requires javafx.media;
 
     opens sample;
-}
+ }

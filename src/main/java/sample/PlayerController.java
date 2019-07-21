@@ -1,6 +1,3 @@
-/**
- * @author Sudhansu
- * */
 package sample;
 
 import javafx.fxml.FXML;
@@ -12,7 +9,10 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.File;
-
+/**
+ *
+ * @author Sudhansu
+ */
 public class PlayerController {
     @FXML
     private Button buttonStop, buttonPlay, buttonPause;
