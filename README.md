@@ -7,3 +7,7 @@ There **will be** some issues for Linux users as JavaFX doesn't support libavcod
 
 ## Requirements
 Requires a Java version >= 11 preferably the latest.
+
+
+## Formats supported
+mp3*, m4a*, wav, aac*, aiff, m3u8
