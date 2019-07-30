@@ -62,7 +62,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>sample.Main</mainClass>
+                            <mainClass>sample.Launcher</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
