@@ -1,5 +1,7 @@
 # StupidMusicPlayer
 [![Known Vulnerabilities](https://snyk.io//test/github/the-lazy-learner/StupidMusicPlayer/badge.svg?targetFile=pom.xml)](https://snyk.io//test/github/the-lazy-learner/StupidMusicPlayer?targetFile=pom.xml)
+[![LICENSE](https://img.shields.io/github/license/the-lazy-learner/StupidMusicPlayer?color=blue&style=for-the-badge)](LICENSE)
+
 
 A barebones barely working music player built using JavaFX. 
 
