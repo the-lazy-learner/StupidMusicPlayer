@@ -63,6 +63,7 @@ public class PlayerController {
 
     @FXML
     public void openFile() {
+        stopMusic();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Media File");
         mediaFile = fileChooser.showOpenDialog(new Stage());
