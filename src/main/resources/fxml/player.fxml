@@ -1,21 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.162"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PlayerController">
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PlayerController">
     <children>
         <MenuBar VBox.vgrow="NEVER">
             <Menu mnemonicParsing="true" text="File">
                 <items>
                     <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open..." />
                     <MenuItem mnemonicParsing="false" text="Preferences..." />
-                    <MenuItem mnemonicParsing="false" text="Quit"/>
+                    <MenuItem mnemonicParsing="false" text="Quit" />
                 </items>
             </Menu>
             <Menu mnemonicParsing="true" text="Help">
@@ -24,15 +26,18 @@
                 </items>
             </Menu>
         </MenuBar>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0"
-                    prefWidth="-1.0" VBox.vgrow="ALWAYS">
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
             <children>
-                <Button fx:id="buttonPlay" onAction="#playMusic"
-                        layoutX="182.0" layoutY="223.0" mnemonicParsing="false" text="Play" />
-                <Button fx:id="buttonPause" onAction="#pauseMusic"
-                        layoutX="259.0" layoutY="223.0" mnemonicParsing="false" text="Pause" />
-                <Button fx:id="buttonStop" onAction="#stopMusic"
-                        layoutX="350.0" layoutY="223.0" mnemonicParsing="false" text="Stop" />
+                <Button fx:id="buttonPlay" layoutX="182.0" layoutY="223.0" mnemonicParsing="false" onAction="#playMusic" text="Play" />
+                <Button fx:id="buttonPause" layoutX="259.0" layoutY="223.0" mnemonicParsing="false" onAction="#pauseMusic" text="Pause" />
+                <Button fx:id="buttonStop" layoutX="350.0" layoutY="223.0" mnemonicParsing="false" onAction="#stopMusic" text="Stop" />
+            <HBox layoutX="156.0" layoutY="189.0">
+               <children>
+                  <Label fx:id="currentTime" text="--/--" textAlignment="RIGHT" HBox.hgrow="ALWAYS" />
+                  <Slider fx:id="progressBar" prefHeight="16.0" prefWidth="229.0" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="totalDuration" text="--/--" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
             </children>
         </AnchorPane>
     </children>
