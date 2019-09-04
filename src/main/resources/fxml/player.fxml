@@ -39,6 +39,7 @@
                </children>
             </HBox>
             <Slider fx:id="volumeSlider" layoutX="517.0" layoutY="121.0" orientation="VERTICAL" />
+            <Label layoutX="504.0" layoutY="105.0" text="Volume" />
             </children>
         </AnchorPane>
     </children>
