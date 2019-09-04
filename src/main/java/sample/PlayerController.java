@@ -158,13 +158,11 @@ public class PlayerController {
                 });
                 volumeSlider.valueProperty().addListener((
                         observable, oldValue, newValue
-                ) -> {
-                    volumeSlider.lookup(".track").setStyle(String.format(
-                            "-fx-background-color: " +
-                            "linear-gradient(to top, #3ba8e1 %d%%, #969696 %d%%);",
-                            newValue.intValue(), newValue.intValue()
-                    ));
-                });
+                ) -> volumeSlider.lookup(".track").setStyle(String.format(
+                        "-fx-background-color: " +
+                        "linear-gradient(to top, #3ba8e1 %d%%, #969696 %d%%);",
+                        newValue.intValue(), newValue.intValue()
+                )));
             });
         } catch (Exception e) {
             e.printStackTrace();
