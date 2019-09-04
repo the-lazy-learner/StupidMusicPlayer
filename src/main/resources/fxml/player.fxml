@@ -28,9 +28,9 @@
         </MenuBar>
         <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
             <children>
-                <Button fx:id="buttonPlay" layoutX="264.0" layoutY="285.0" mnemonicParsing="false" onAction="#playMusic" text="Play" />
-                <Button fx:id="buttonPause" layoutX="184.0" layoutY="286.0" mnemonicParsing="false" onAction="#pauseMusic" text="Pause" />
-                <Button fx:id="buttonStop" layoutX="332.0" layoutY="284.0" mnemonicParsing="false" onAction="#stopMusic" text="Stop" />
+                <Button fx:id="buttonPlay" layoutX="267.0" layoutY="285.0" mnemonicParsing="false" onAction="#playMusic" text="Play" />
+                <Button fx:id="buttonPause" layoutX="190.0" layoutY="286.0" mnemonicParsing="false" onAction="#pauseMusic" text="Pause" />
+                <Button fx:id="buttonStop" layoutX="344.0" layoutY="284.0" mnemonicParsing="false" onAction="#stopMusic" text="Stop" />
             <HBox layoutX="156.0" layoutY="246.0">
                <children>
                   <Label fx:id="currentTime" text="--/--" textAlignment="RIGHT" HBox.hgrow="ALWAYS" />

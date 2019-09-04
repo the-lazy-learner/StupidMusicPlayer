@@ -1,4 +1,8 @@
 .button {
     /*-fx-background-color: #ebfd41;*/
     -fx-background-radius: 5em;
+    -fx-min-width: 60px;
+    -fx-max-width: 60px;
+    -fx-min-height: 60px;
+    -fx-max-height: 60px;
 }

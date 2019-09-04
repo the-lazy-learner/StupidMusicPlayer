@@ -37,6 +37,7 @@ public class PlayerController {
     @FXML
     public void stopMusic() {
         if (mediaPlayer.getCurrentTime() != Duration.ZERO) {
+            mediaPlayer.seek(mediaPlayer.getStartTime());
             mediaPlayer.stop();
             buttonStop.setDisable(true);
             buttonPause.setDisable(true);
@@ -97,7 +98,9 @@ public class PlayerController {
             mediaPlayer = new MediaPlayer(new Media(mediaFile.toURI().toString()));
             mediaPlayer.setOnReady(() -> {
                 volumeSlider.setValue(100);
-                mediaPlayer.setVolume(volumeSlider.getValue()/100);
+                volumeSlider.lookup(".track")
+                        .setStyle("-fx-background-color: #3ba8e1;");
+                mediaPlayer.setVolume(volumeSlider.getValue() / 100);
                 currentTime.textProperty().bind(
                         Bindings.createStringBinding(() -> {
                             Duration time = mediaPlayer.getCurrentTime();
@@ -111,28 +114,56 @@ public class PlayerController {
                         )
                 );
                 final double MIN_CHANGE = 0.5;
-                progressBar.valueChangingProperty().addListener((observable, wasChanging, isChanging) -> {
+                progressBar.valueChangingProperty().addListener((
+                        observable, wasChanging, isChanging
+                ) -> {
                     if (!isChanging) {
                         mediaPlayer.seek(Duration.seconds(progressBar.getValue()));
                     }
                 });
-                progressBar.valueProperty().addListener((observable, oldTime, newTime) -> {
+                progressBar.valueProperty().addListener((
+                        observable, oldTime, newTime
+                ) -> {
                     if (!progressBar.isValueChanging()) {
-                        double currentTimeSecs = mediaPlayer.getCurrentTime().toSeconds();
-                        if (Math.abs(currentTimeSecs - newTime.doubleValue()) > MIN_CHANGE) {
+                        double currentTimeSecs = mediaPlayer
+                            .getCurrentTime().toSeconds();
+                        if (Math.abs(currentTimeSecs - newTime.doubleValue())
+                                > MIN_CHANGE) {
                             mediaPlayer.seek(Duration.seconds(newTime.doubleValue()));
                         }
                     }
+                    int newTimeStyle =
+                        (int) (newTime.doubleValue() / mediaPlayer
+                        .getTotalDuration().toSeconds() * 100);
+                    String style = String.format(
+                            "-fx-background-color: " +
+                            "linear-gradient(to right, #3ba8e1 %d%%, #969696 %d%%);",
+                            newTimeStyle, newTimeStyle
+                    );
+                    progressBar.lookup(".track").setStyle(style);
                 });
-                mediaPlayer.currentTimeProperty().addListener((observable, oldTime, newTime) -> {
+                mediaPlayer.currentTimeProperty().addListener((
+                        observable, oldTime, newTime
+                ) -> {
                     if (!progressBar.isValueChanging()) {
                         progressBar.setValue(newTime.toSeconds());
                     }
                 });
-                volumeSlider.valueChangingProperty().addListener((observableValue, wasChanging, isChanging) -> {
+                volumeSlider.valueChangingProperty().addListener((
+                        observableValue, wasChanging, isChanging
+                ) -> {
                     if (!isChanging) {
-                        mediaPlayer.setVolume(volumeSlider.getValue()*0.01d);
+                        mediaPlayer.setVolume(volumeSlider.getValue() * 0.01d);
                     }
+                });
+                volumeSlider.valueProperty().addListener((
+                        observable, oldValue, newValue
+                ) -> {
+                    volumeSlider.lookup(".track").setStyle(String.format(
+                            "-fx-background-color: " +
+                            "linear-gradient(to top, #3ba8e1 %d%%, #969696 %d%%);",
+                            newValue.intValue(), newValue.intValue()
+                    ));
                 });
             });
         } catch (Exception e) {
