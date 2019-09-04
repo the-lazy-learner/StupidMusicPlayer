@@ -24,7 +24,7 @@ public class PlayerController {
     @FXML
     private Label currentTime, totalDuration;
     @FXML
-    private Slider progressBar;
+    private Slider progressBar, volumeSlider;
 
     public PlayerController() {
         try {
@@ -96,6 +96,8 @@ public class PlayerController {
         try {
             mediaPlayer = new MediaPlayer(new Media(mediaFile.toURI().toString()));
             mediaPlayer.setOnReady(() -> {
+                volumeSlider.setValue(100);
+                mediaPlayer.setVolume(volumeSlider.getValue()/100);
                 currentTime.textProperty().bind(
                         Bindings.createStringBinding(() -> {
                             Duration time = mediaPlayer.getCurrentTime();
@@ -125,6 +127,11 @@ public class PlayerController {
                 mediaPlayer.currentTimeProperty().addListener((observable, oldTime, newTime) -> {
                     if (!progressBar.isValueChanging()) {
                         progressBar.setValue(newTime.toSeconds());
+                    }
+                });
+                volumeSlider.valueChangingProperty().addListener((observableValue, wasChanging, isChanging) -> {
+                    if (!isChanging) {
+                        mediaPlayer.setVolume(volumeSlider.getValue()*0.01d);
                     }
                 });
             });

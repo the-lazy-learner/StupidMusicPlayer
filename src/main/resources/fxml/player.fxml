@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PlayerController">
+<VBox prefHeight="400.0" prefWidth="600.0" stylesheets="test.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PlayerController">
     <children>
         <MenuBar VBox.vgrow="NEVER">
             <Menu mnemonicParsing="true" text="File">
@@ -28,16 +28,17 @@
         </MenuBar>
         <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
             <children>
-                <Button fx:id="buttonPlay" layoutX="182.0" layoutY="223.0" mnemonicParsing="false" onAction="#playMusic" text="Play" />
-                <Button fx:id="buttonPause" layoutX="259.0" layoutY="223.0" mnemonicParsing="false" onAction="#pauseMusic" text="Pause" />
-                <Button fx:id="buttonStop" layoutX="350.0" layoutY="223.0" mnemonicParsing="false" onAction="#stopMusic" text="Stop" />
-            <HBox layoutX="156.0" layoutY="189.0">
+                <Button fx:id="buttonPlay" layoutX="264.0" layoutY="285.0" mnemonicParsing="false" onAction="#playMusic" text="Play" />
+                <Button fx:id="buttonPause" layoutX="184.0" layoutY="286.0" mnemonicParsing="false" onAction="#pauseMusic" text="Pause" />
+                <Button fx:id="buttonStop" layoutX="332.0" layoutY="284.0" mnemonicParsing="false" onAction="#stopMusic" text="Stop" />
+            <HBox layoutX="156.0" layoutY="246.0">
                <children>
                   <Label fx:id="currentTime" text="--/--" textAlignment="RIGHT" HBox.hgrow="ALWAYS" />
                   <Slider fx:id="progressBar" prefHeight="16.0" prefWidth="229.0" HBox.hgrow="ALWAYS" />
                   <Label fx:id="totalDuration" text="--/--" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
+            <Slider fx:id="volumeSlider" layoutX="517.0" layoutY="121.0" orientation="VERTICAL" />
             </children>
         </AnchorPane>
     </children>
